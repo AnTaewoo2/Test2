@@ -7,10 +7,12 @@ def test_slugify_lowercases_and_hyphenates():
 
 def test_slugify_handles_multiple_words():
     assert slugify("A quick brown fox") == "a-quick-brown-fox"
+    assert slugify("One Two Three") == "one-two-three"
 
 
 def test_slugify_collapses_and_trims_whitespace():
     assert slugify("  Hello   World  ") == "hello-world"
+    assert slugify("\tHello\nWorld\t") == "hello-world"
 
 
 def test_slugify_empty_and_whitespace_only():
@@ -24,4 +26,5 @@ def test_slugify_preserves_lowercased_unicode_text():
 
 def test_slugify_handles_punctuation():
     assert slugify("Hello, World!") == "hello,-world!"
+
 
