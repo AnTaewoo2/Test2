@@ -35,5 +35,4 @@ def test_readme_documents_slugify_utility():
     assert "slugify.py" in content
     assert "from slugify import slugify" in content
     assert 'slugify("Hello World")' in content
-
-
+    assert 'slugify("Hello World") == "hello-world"' in content
