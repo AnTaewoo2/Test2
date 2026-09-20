@@ -17,7 +17,7 @@ def test_slugify_collapses_and_trims_whitespace():
 
 def test_slugify_empty_and_whitespace_only():
     assert slugify("") == ""
-    assert slugify("   ") == ""
+    assert slugify("   \t\n") == ""
 
 
 def test_slugify_preserves_lowercased_unicode_text():
@@ -25,6 +25,6 @@ def test_slugify_preserves_lowercased_unicode_text():
 
 
 def test_slugify_handles_punctuation():
-    assert slugify("Hello, World!") == "hello,-world!"
+    assert slugify("Hello, World!") == "hello-world"
 
 
